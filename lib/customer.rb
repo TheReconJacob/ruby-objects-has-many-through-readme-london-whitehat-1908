@@ -13,12 +13,6 @@ class Customer
     @@all
   end
 
-  def meals
-    Meal.all.select do |meal|
-      meal.customer == self
-    end
-  end
-
   def waiters
     meals.map do |meal|
       meal.waiter
@@ -35,6 +29,12 @@ class Customer
       end
     end
     oldest_customer
+  end
+  
+  def meals
+    Meal.all.select do |meal|
+      meal.customer == self
+    end
   end
 
   def new_meal(waiter, total, tip=0)
