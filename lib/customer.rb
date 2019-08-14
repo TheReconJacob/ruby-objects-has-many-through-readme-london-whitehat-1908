@@ -24,6 +24,7 @@ class Customer
       meal.waiter
     end
   end
+  
   def self.oldest_customer
     oldest_age = 0
     oldest_customer = nil
